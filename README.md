@@ -1,5 +1,5 @@
 # Master's Thesis Repository
-This repository contains code developed during my master thesis project titled "Brain Age Prediction from Gray Matter Asymmetry in Multiple Sclerosis". The project investigates whether voxel-wise gray matter asymmetry maps derived from T1-weighted MRI data can be used to predict brain age, and whether asymmetry-based brain age measures may have clinical relevance in multiple sclerosis.
+This repository contains code developed during my master thesis project titled "Brain Age Prediction from Gray Matter Asymmetry in Multiple Sclerosis". The project investigates whether voxel-wise gray matter asymmetry maps derived from T1-weighted MRI data can be used to predict brain age, and whether asymmetry-based brain age measures may have clinical relevance in multiple sclerosis (MS).
 
 
 ## Table of Contents

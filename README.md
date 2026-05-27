@@ -5,41 +5,44 @@ This repository contains code developed during my master thesis project titled "
 ## Table of Contents
 
 - [Repository Structure](#repository-structure)
-- [Methods](#methods)
+- [Methods Overview](#methods-overview)
+- [Data](#data)
 - [Requirements](#requirements)
 - [Usage](#usage)
+- [Contact](#contact)
+- [Author](#author)
 
 ---
 
 ## Repository Structure
 
 ```text
-brain_age_MS
+brain_age_MS/
 │
-├── VBM
-│   ├── Scripts_VBM
-│   └── extra_material
+├── VBM/
+│   ├── Scripts_VBM/
+│   └── extra_material/
 │
-├── brain_age_models
-│   ├── unsmoothed_model
-│   └── smoothed_model
+├── brain_age_models/
+│   ├── unsmoothed_model/
+│   └── smoothed_model/
 │
-├── Notebooks
-│   ├── MS_prediction_ntebooks
-│   └── smoothed_notebooks_MS
+├── MS_inference/
+│   ├── MS_inference_unsmoothed/
+│   └── MS_inference_smoothed/
 │
-├── predictions_csv_files
-│   ├── healthy_predictions_csv
+├── predictions_csv_files/
+│   ├── healthy_predictions_csv/
 │   │  
-│   └── MS_predictions_csv
-│       ├── MS_unsmoothed_predictions
-│       └── MS_smoothed_predictions
+│   └── MS_predictions_csv/
+│       ├── MS_unsmoothed_predictions/
+│       └── MS_smoothed_predictions/
 │
-├── Results
-│   ├── Model_results
-│   └── MS_results
-│       ├── baseline_analysis
-│       └── longitudinal_analysis
+├── Results/
+│   ├── Model_results/
+│   └── MS_results/
+│       ├── baseline_analysis/
+│       └── longitudinal_analysis/
 │
 └── README.md
 ```
@@ -47,61 +50,44 @@ brain_age_MS
 ### Folder descriptions
 
 - **VBM/**  
-  Contains MATLAB scripts and supporting files used for voxel-based morphometry (VBM) preprocessing and generation of asymmetry maps.
-
+  Contains MATLAB scripts used for voxel-based morphometry (VBM) preprocessing and generation of asymmetry maps.
+  
+- **VBM/extra_material/**  
+  Contains supporting scripts and template files required for the VBM preprocessing pipeline. These files originate from the framework described by Kurth et al. and were not developed as part of this thesis project.
+  
 - **brain_age_models/**  
   Contains notebooks for training and externally testing the brain age prediction models (unsmoothed and smoothed model), as well as saved model weights.
 
-- **Notebooks/**  
-  Contains notebooks used for predicting brain age in MS patients at different longitudinal timepoints using both smoothed and unsmoothed asymmetry maps.
+- **MS_inference/**  
+  Contains notebooks used to apply the trained brain age models to asymmetry maps from MS patients and generate prediction outputs. The generated prediction files are subsequently analyzed in separate notebooks located in the `Results/` folder.
 
 - **predictions_csv_files/**  
   Contains CSV files with predictions for both healthy and MS subjects, for both models. The CSV files are used in subsequent analyses.
 
 - **Results/**  
-  Contains notebooks used for visualization, statistical analyses, and investigation of clinical associations with brain age gap (BAG), including both baseline and longitudinal analyses.
-
-### Folder descriptions
-
-- **VBM/**  
-  Contains MATLAB scripts used for voxel-based morphometry (VBM) preprocessing and generation of asymmetry maps from T1-weighted MRI data.
-
-- **brain_age_models/**  
-  Contains notebooks for training and externally testing the brain age prediction models, as well as the trained model weights (`.pth` files).
-
-- **Notebooks/**  
-  Contains notebooks used for predicting brain age in MS patients at different longitudinal timepoints using both unsmoothed and smoothed asymmetry maps.
-
-- **predictions_csv_files/**  
-  Contains exported prediction results and processed CSV files used in subsequent analyses.
-
-- **Results/**  
-  Contains notebooks used for visualization, statistical analyses, and investigation of clinical associations with brain age gap (BAG), including baseline and longitudinal analyses.
+  Contains notebooks used for visualization, performance evaluation, and statistical analyses of the brain age predictions. This includes model performance in healthy subjects, comparisons between healthy controls and MS patients, as well as baseline and longitudinal analyses of brain age measures in MS patients and their associations with clinical variables.
 
 
 
+## Methods Overview
+The workflow of this project consisted of several main steps:
 
+1. **Voxel-based morphometry (VBM)** was performed on T1-weighted MRI data from healthy subjects and MS patients in order to generate voxel-wise gray matter asymmetry maps.
 
+2. Two separate **brain age prediction models** were developed and trained using asymmetry maps from healthy subjects. One model was trained using unsmoothed asymmetry maps, while the other used spatially smoothed asymmetry maps. Else, the models are identical.
 
+3. The trained models were subsequently applied to asymmetry maps from MS patients in order to estimate brain age.
 
-
-
-
-
-
-
+4. The prediction results were further analyzed through baseline analyses, longitudinal analyses, and clinical analyses.
 
 
 ## Data
-Short note about which datasets were used, and that MRI data are not included due to privacy/data access restrictions.
 
-## Methods
-Short overview:
-- VBM preprocessing
-- asymmetry map generation
-- brain age prediction model
-- prediction in MS patients
-- clinical/longitudinal analyses
+The brain age models were trained using asymmetry maps from healthy subjects derived from MRI data from the Human Connectome Project (HCP) and the Cambridge Centre for Ageing and Neuroscience (CamCAN) datasets. The trained models were subsequently applied to asymmetry maps generated from MRI data from MS patients from the OFAMS dataset.
+
+The original MRI scans and derived asymmetry maps are not included in this repository due to privacy regulations and data access restrictions. Metadata files containing clinical and demographic information are also excluded due to sensitive information.
+
+
 
 ## Requirements
 To run the code in this repository, the following software and libraries are required:
@@ -121,6 +107,10 @@ Python (version 3.11.14 or higher)
 - scikit-learn (v1.7.2)
 - SciPy (v1.16.3)
 
+**MATLAB toolboxes:**
+- SPM12
+- CAT12
+
 ## Usage
 To use the code in this repository, follow the instructions below:
 
@@ -129,10 +119,25 @@ Clone this repository to your local machine using the following command:
 ```bash
 git clone https://github.com/anneaasengen/brain_age_MS.git
 ```
-Any important limitations, e.g. paths must be adapted locally.
 
+After cloning the repository, explore the different folders based on your requirements:
 
+- **VBM/**  
+  Execute the MATLAB scripts using MATLAB together with SPM/CAT12.
 
+- **brain_age_models/**  
+  Run the relevant notebook cells to train, validate, and externally test the brain age prediction models.
+
+- **MS_inference/**  
+  Run the relevant notebook cells to perform brain age prediction in MS patients.
+
+- **Results/**  
+  Execute the relevant notebook cells to perform visualization and statistical analyses.
+
+- **predictions_csv_files/**  
+  Contains CSV files with predition results used in the analyses.
+
+Make sure to adjust any necessary file paths and environment-specific settings before running the scripts and notebooks.
 
 ## Contact
 

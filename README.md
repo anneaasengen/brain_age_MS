@@ -1,6 +1,9 @@
 # Master's Thesis Repository
 This repository contains code developed during my master thesis project titled "Brain Age Prediction from Gray Matter Asymmetry in Multiple Sclerosis". The project investigates whether voxel-wise gray matter asymmetry maps derived from T1-weighted MRI data can be used to predict brain age, and whether asymmetry-based brain age measures may have clinical relevance in multiple sclerosis (MS).
 
+Two convolutional neural network (CNN) models were developed to predict brain age: one trained on unsmoothed asymmetry maps and one trained on spatially smoothed asymmetry maps. Else, the models are identical. Based on the model evaluation and subsequent analyses, the unsmoothed model was selected as the primary model in this project. Similarly, residual brain age gap (residual BAG) was used as the main brain age measure, while adjusted BAG was included as a supplementary analysis.
+
+
 
 ## Table of Contents
 
@@ -53,7 +56,7 @@ brain_age_MS/
   Contains MATLAB scripts used for voxel-based morphometry (VBM) preprocessing and generation of asymmetry maps.
   
 - **VBM/extra_material/**  
-  Contains supporting scripts and template files required for the VBM preprocessing pipeline. These files originate from the framework described by Kurth et al. and were not developed as part of this thesis project.
+  Contains supporting scripts and template files required for the VBM preprocessing pipeline. These files originate from the VBM framework described by Kurth et al. [1] and were not developed as part of this thesis project.
   
 - **brain_age_models/**  
   Contains notebooks for training and externally testing the brain age prediction models (unsmoothed and smoothed model), as well as saved model weights.
@@ -146,5 +149,12 @@ If you have any questions or need further assistance, feel free to contact me at
 ## Author
 Anne Aasengen
 
+
+
+## References
+
+- [1] F. Kurth, C. Gaser and E. Luders. “A 12-step user guide for analyzing
+voxel-wise gray matter asymmetries in statistical parametric mapping
+(SPM)”. In: Nature Protocols 10.2 (2015), pp. 293–304. DOI: https://doi.org/10.1038/nprot.2015.014
 
 

@@ -14,6 +14,7 @@ Two convolutional neural network (CNN) models were developed to predict brain ag
 - [Usage](#usage)
 - [Contact](#contact)
 - [Author](#author)
+- [References](#references)
 
 ---
 

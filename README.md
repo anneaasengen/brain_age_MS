@@ -1,7 +1,7 @@
 # Master's Thesis Repository
 This repository contains code developed during my master thesis project titled "Brain Age Prediction from Gray Matter Asymmetry in Multiple Sclerosis". The project investigates whether voxel-wise gray matter asymmetry maps derived from T1-weighted MRI data can be used to predict brain age, and whether asymmetry-based brain age measures may have clinical relevance in multiple sclerosis (MS).
 
-Two convolutional neural network (CNN) models were developed to predict brain age: one trained on unsmoothed asymmetry maps and one trained on spatially smoothed asymmetry maps. Else, the models are identical. Based on the model evaluation and subsequent analyses, the unsmoothed model was selected as the primary model in this project. Similarly, residual brain age gap (residual BAG) was used as the main brain age measure, while adjusted BAG was included as a supplementary analysis.
+Two convolutional neural network (CNN) models were developed to predict brain age: one trained on unsmoothed asymmetry maps and one trained on spatially smoothed asymmetry maps. Else, the models are identical. Based on the model evaluation and subsequent analyses, the unsmoothed model was selected as the primary model in this project. Similarly, residual brain age gap (residual BAG) was used as the main brain age measure, while adjusted BAG was included as a supplementary analysis. Both residual BAG and adjusted BAG are variants of BAG that accounts for potential confounding variables and reduce bias in the brain age estimates.
 
 
 

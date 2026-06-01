@@ -89,7 +89,7 @@ The workflow of this project consisted of several main steps:
 
 The brain age models were trained using asymmetry maps from healthy subjects derived from MRI data from the Human Connectome Project (HCP) and the Cambridge Centre for Ageing and Neuroscience (CamCAN) datasets. The trained models were subsequently applied to asymmetry maps generated from MRI data from MS patients from the OFAMS dataset.
 
-The original MRI scans and derived asymmetry maps are not included in this repository due to privacy regulations and data access restrictions. Metadata files containing clinical and demographic information are also excluded due to sensitive information.
+The original MRI scans and derived asymmetry maps are not included in this repository due to privacy regulations and data access restrictions. Metadata files containing clinical and demographic information are also excluded.
 
 
 

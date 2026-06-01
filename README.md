@@ -151,11 +151,9 @@ If you have any questions or need further assistance, feel free to contact me at
 Anne Aasengen
 
 
-
 ## References
 
 - [1] F. Kurth, C. Gaser and E. Luders. “A 12-step user guide for analyzing
 voxel-wise gray matter asymmetries in statistical parametric mapping
 (SPM)”. In: Nature Protocols 10.2 (2015), pp. 293–304. DOI: https://doi.org/10.1038/nprot.2015.014
-
 
